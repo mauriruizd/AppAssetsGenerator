@@ -96,12 +96,12 @@ $dir = isset($options['dir']) ? $options['dir'] : $options['d'];
 
 // Setting up directories
 $outputBaseDirectory = $dir . '/output/';
-$outputDirectoriesPrefix = 'android/drawable-';
-$iosOutputDirectory = $outputBaseDirectory . '/ios/';
+$outputDirectoriesPrefix = 'Android/drawable-';
+$iosOutputDirectory = $outputBaseDirectory . '/iOS/';
 
 // Creating directories
 checkOrCreateDir($outputBaseDirectory);
-checkOrCreateDir($outputBaseDirectory . 'android');
+checkOrCreateDir($outputBaseDirectory . 'Android');
 foreach (ANDROIDDENSITYMAP as $density) {
     checkOrCreateDir($outputBaseDirectory . $outputDirectoriesPrefix . $density);
 }
@@ -110,7 +110,7 @@ checkOrCreateDir($iosOutputDirectory);
 $inputDensity = isset($options['inputdensity']) ? $options['inputdensity'] :
     (isset($options['i']) ? $options['i'] : 'xxxhdpi');
 $outputDensities = isset($options['outputdensities']) ? $options['outputdensities'] :
-    (isset($options['o']) ? $options['o'] : 'ldpi,mdpi,hdpi,xhdpi,xxhdpi');
+    (isset($options['o']) ? $options['o'] : 'ldpi,mdpi,hdpi,xhdpi,xxhdpi,xxxhdpi');
 $outputDensities = explode(',', trim($outputDensities));
 
 $files = getFiles($dir);
